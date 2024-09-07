@@ -35,7 +35,7 @@
                                 <div class="d-flex align-items-center">
                                     <div class="flex-grow-1 me-2">
                                         <h6 class="mb-0">{{ auth()->user()->name }}</h6>
-                                        <small>{{ auth()->user()->getRoleNames()[0] }}</small>
+                                        <small>{{ ucfirst(auth()->user()->getRoleNames()[0]) }}</small>
                                     </div>
                                 </div>
                             </a>

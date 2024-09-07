@@ -1,7 +1,8 @@
 <li class="pc-item pc-caption">
     <label>Menu</label>
 </li>
-<li class="pc-item pc-hasmenu">
+@role('merchant')
+<li class="pc-item pc-hasmenu {{ request()->routeIs('merchant.menu.*') ? 'active pc-trigger' : '' }}">
     <a href="#!" class="pc-link">
         <span class="pc-micon">
             <i class="ph-duotone ph-fork-knife"></i>
@@ -10,19 +11,31 @@
         <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
     </a>
     <ul class="pc-submenu">
-        <li class="pc-item"><a class="pc-link" href="{{ route('merchant.index') }}">Daftar Menu</a></li>
+        <li class="pc-item {{ request()->routeIs('merchant.menu.*') ? 'active' : '' }}"><a class="pc-link" href="{{ route('merchant.index') }}">Daftar Menu</a></li>
     </ul>
 </li>
-{{-- <li class="pc-item pc-hasmenu">
+@endrole
+
+@role('customer')
+<li class="pc-item pc-hasmenu ">
     <a href="#!" class="pc-link">
         <span class="pc-micon">
-            <i class="ph-duotone ph-gauge"></i>
+            <i class="ph-duotone ph-fork-knife"></i>
         </span>
-        <span class="pc-mtext">Orded</span>
+        <span class="pc-mtext">Katering</span>
         <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
-        <span class="pc-badge">2</span>
     </a>
     <ul class="pc-submenu">
-        <li class="pc-item"><a class="pc-link" href="/">Riwayat Order</a></li>
+        <li class="pc-item"><a class="pc-link" href="{{ route('customer.pilih-menu') }}">Pilih Menu</a></li>
     </ul>
-</li> --}}
+</li>
+@endrole
+
+<li class="pc-item">
+    <a href="{{ route('transaction.invoice') }}" class="pc-link">
+        <span class="pc-micon">
+            <i class="ph-duotone ph-scroll"></i>
+        </span>
+        <span class="pc-mtext">Invoice</span>
+    </a>
+</li>

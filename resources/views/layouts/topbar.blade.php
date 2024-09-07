@@ -20,6 +20,12 @@
         <!-- [Mobile Media Block end] -->
         <div class="ms-auto">
             <ul class="list-unstyled">
+                <li class="pc-h-item">
+                    <a class="pc-head-link dropdown-toggle arrow-none me-0"  href="{{ route('customer.cart') }}"
+                        role="button" aria-haspopup="false" aria-expanded="false">
+                        <i class="ph-duotone ph-shopping-cart"></i>
+                    </a>
+                </li>
                 <li class="dropdown pc-h-item">
                     <a class="pc-head-link dropdown-toggle arrow-none me-0" data-bs-toggle="dropdown" href="#"
                         role="button" aria-haspopup="false" aria-expanded="false">
